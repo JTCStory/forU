@@ -11,8 +11,8 @@
       --bg-2: #f6e9df;
       --bg-3: #f7dfe6;
       --bg-4: #dcecff;
-      --ink: #4b4453;
-      --muted: rgba(75, 68, 83, 0.72);
+      --ink: #445166;
+      --muted: rgba(68, 81, 102, 0.74);
       --line: rgba(255, 255, 255, 0.35);
       --glass: rgba(255, 255, 255, 0.28);
       --glass-strong: rgba(255, 255, 255, 0.42);
@@ -45,9 +45,9 @@
       color: var(--ink);
       font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.82), transparent 28%),
-        radial-gradient(circle at 80% 20%, rgba(255, 214, 232, 0.45), transparent 28%),
-        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 52%, #f8f2f0 100%);
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), transparent 26%),
+        radial-gradient(circle at 80% 18%, rgba(255, 228, 240, 0.28), transparent 26%),
+        linear-gradient(180deg, #fffdf9 0%, #fff7ef 52%, #fdf9f5 100%);
       overflow-x: hidden;
       opacity: 0;
       transition: opacity 900ms ease, background 900ms ease;
@@ -59,10 +59,10 @@
 
     body.night {
       background:
-        radial-gradient(circle at 20% 18%, rgba(232, 247, 255, 0.28), transparent 18%),
-        radial-gradient(circle at 78% 12%, rgba(255, 242, 205, 0.2), transparent 16%),
-        linear-gradient(180deg, #08111f 0%, #11192d 52%, #0b1020 100%);
-      color: #f4f3ff;
+        radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.14), transparent 18%),
+        radial-gradient(circle at 78% 12%, rgba(255, 244, 214, 0.14), transparent 16%),
+        linear-gradient(180deg, #111a29 0%, #1a2233 52%, #111827 100%);
+      color: #f7f8fb;
     }
 
     body.night .subtle,
@@ -77,9 +77,9 @@
     body.night .card,
     body.night .toast,
     body.night .floating-chip {
-      border-color: rgba(255, 255, 255, 0.16);
-      background: rgba(16, 24, 41, 0.5);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.16);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
     }
 
     body.night .hero-ribbon,
@@ -1032,7 +1032,7 @@
     }
 
     body.night .tiny-label {
-      color: rgba(244, 243, 255, 0.62);
+      color: rgba(247, 248, 251, 0.68);
     }
 
     /* Calm, simpler presentation */
@@ -1510,10 +1510,7 @@
     const particles = [];
     const decorations = [];
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isNight = (() => {
-      const hour = new Date().getHours();
-      return hour >= 18 || hour < 6;
-    })();
+    const isNight = false;
 
     if (isNight) {
       body.classList.add("night");
